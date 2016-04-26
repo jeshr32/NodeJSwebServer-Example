@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Tabla</title>
+
+</head>
+<body>
+
+<a href="/usuario">Nuevo</a><br>
+<br>
+<table border="1" id="result">
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Usuario</td>
+        <td>Password</td>
+        <td>Acciones</td>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Usuario</td>
+        <td>Password</td>
+        <td>Acciones</td>
+    </tr>
+    </tfoot>
+
+    <tbody>
+    <tr>
+      <% usuariolist.forEach(function(usuario, index){%>
+
+      <td><%= usuario.id %></td>
+      <td><%= usuario.nombre %></td>
+      <td><%= usuario.apellido %></td>
+      <td><%= usuario.usuario %></td>
+      <td><%= usuario.password %></td>
+      <td><a href="/usuario/<%= usuario.id %>">Eliminar</a> <a href="/usuario/<%= usuario.id%>">Modificar</a> </td>
+
+    </tr>
+    </tbody>
+ <% }) %>
+</table>
+</body>
+</html>
